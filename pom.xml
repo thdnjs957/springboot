@@ -36,10 +36,9 @@
 		</plugins>
 	</build>
 
-
-
 	<modules>
 		<module>springboot-springex</module>
 		<module>springboot-mysite</module>
 	</modules>
+	
 </project>
