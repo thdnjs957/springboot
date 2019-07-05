@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cafe24.mysite.dto.JSONResult;
 import com.cafe24.mysite.service.GuestbookService;
 import com.cafe24.mysite.vo.GuestbookVo;
 
@@ -29,10 +30,11 @@ public class GuestbookController {
 	
 	
 	@RequestMapping(value="/list", method=RequestMethod.POST) // post 방식으로 오면 insert
-	public String list(Model model,@ModelAttribute GuestbookVo guestbookVo) {
+	public JSONResult list(Model model,@ModelAttribute GuestbookVo guestbookVo) {
+		// guestbookService.insert(guestbookVo);
+		boolean result = true;
 		
-		guestbookService.insert(guestbookVo);
-		return "redirect:/guestbook/list";
+		return JSONResult.success(result);
 	}	
 	
 	@RequestMapping("/deleteform") 
@@ -53,6 +55,11 @@ public class GuestbookController {
 		return "guestbook/deleteform";
 	}
 	
+	@RequestMapping("/timeline")
+	public String delete() {
+		
+		return "guestbook/index-timeline";
+	}
 
 
 }

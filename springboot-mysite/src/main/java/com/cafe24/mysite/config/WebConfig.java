@@ -30,7 +30,6 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
-	
 	//
 	// Message Converter
 	//
